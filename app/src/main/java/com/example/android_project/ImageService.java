@@ -53,7 +53,6 @@ public class ImageService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
         Log.d(TAG,"onStartCommand");
 
-        // Notre thread va dormir 5 secondes puis généré un nombre aléatoire
         Thread fetchPictures = new Thread(new Runnable() {
             public void run() {
                 if(monListener != null) monListener.onThreadStateChange(true);

@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity{
         mContext = this;
 
         mDb = new MaDataBase(this);
-        mDb.clearData();
+        //mDb.clearData();
 
 
         mManager = getSupportFragmentManager();

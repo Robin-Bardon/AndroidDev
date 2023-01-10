@@ -46,8 +46,9 @@ public class TroisiemeFragment extends Fragment {
         if (cursor.getCount() > 0) {
             cursor.moveToFirst();
             do {
-                images.add(new BitmapDrawable(getResources(), cursor.getString(cursor.getColumnIndex("col1"))));
-                System.out.println("Add new picture: " + images );
+                byte[] bimage = cursor.getBlob(1);
+                Bitmap bitmap = BitmapFactory.decodeByteArray(bimage, 0, bimage.length);
+                images.add(new BitmapDrawable(getResources(), bitmap));
             } while (cursor.moveToNext());
         }
         list.setAdapter(monImageAdapteur);

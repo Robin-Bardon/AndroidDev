@@ -38,10 +38,10 @@ public class PremierFragment extends Fragment {
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Drawable image = images.get(i);
-                System.out.println(images);
-                ((MainActivity)getActivity()).getmDb().insertPicture(image);
-                ((MainActivity)getActivity()).getmDb().readData();
+                System.out.println(i);
+                Bitmap p = (Bitmap) ((MainActivity)getActivity()).getLinks().get(i);
+                ((MainActivity)getActivity()).getmDb().insertPicture(p);
+                //((MainActivity)getActivity()).getmDb().readData();
             }
         });
 
